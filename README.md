@@ -1,40 +1,36 @@
-# RTOS STM32 Task3
+# RTOS STM32 Task3 
 # LED Control Program with RTOS
 
-This project demonstrates how to control multiple LEDs on a microcontroller using two independent tasks managed by a real-time operating system (RTOS). Each task handles specific LEDs and operates based on timing requirements using FreeRTOS.
+This project demonstrates multi-tasking LED control on an STM32 microcontroller, utilizing FreeRTOS for task scheduling. The program includes two independent tasks, each responsible for controlling different LEDs with specific timing and frequency requirements.
 
 ## Program Overview
 
-The program initializes two main tasks:
-1. **greenTask1**: Controls the Green LED and toggles it for a set period before turning it off and pausing.
-2. **redTask02**: Controls the Red LED with similar functionality and timing variations.
+The program is designed with two main tasks:
+1. **greenTask1**: Controls a Green LED with a specific blink pattern and delay period.
+2. **redTask02**: Controls a Red LED with a different pattern, alongside an Orange LED.
 
-Both tasks run independently, managed by the RTOS scheduler, which ensures that each task can execute without interference based on their priority levels.
+The tasks are managed using RTOS, which ensures that each task executes as per its priority and timing requirements, ensuring precise control and synchronization.
 
-### Features
-- Independent control of multiple LEDs using RTOS threads.
-- Precise timing and frequency control for LED toggling.
-- Efficient use of microcontroller GPIO resources with non-conflicting timing schedules.
+### Task Descriptions
 
-## Task Descriptions
+#### greenTask1
+- **Functionality**: 
+  - Toggles the Green LED at 20 Hz (every 50 ms) for 4 seconds.
+  - Turns off both Green and Blue LEDs after the toggling cycle.
+  - Pauses for 6 seconds before the next cycle.
+- **Priority**: Normal Priority, allowing it to run over redTask02 when both are ready.
+- **Purpose**: Provides a longer blink pattern with a pause, allowing time for other tasks to execute during its idle period.
 
-### greenTask1
-- **Functionality**: Toggles the Green LED at 20 Hz for 4 seconds and then turns it off.
-- **Timing**: Waits for 6 seconds before the next cycle, allowing ample time for other tasks to execute.
-- **Priority**: Normal priority, ensuring it executes before redTask02 when scheduled by the RTOS.
+#### redTask02
+- **Functionality**:
+  - Activates an Orange LED and toggles a Red LED at 20 Hz (50 ms intervals) for 0.5 seconds.
+  - Turns off both Red and Orange LEDs after the toggling cycle.
+  - Pauses for 1.5 seconds before the next cycle.
+- **Priority**: Idle Priority, meaning it only runs when greenTask1 is inactive.
+- **Purpose**: Provides a quick blink pattern that fits within the idle time of greenTask1, ensuring efficient use of GPIO resources.
 
-### redTask02
-- **Functionality**: Toggles the Red LED at 20 Hz for 0.5 seconds while turning on the Orange LED.
-- **Timing**: Pauses for 1.5 seconds between cycles.
-- **Priority**: Idle priority, ensuring it only runs when higher-priority tasks are idle.
+### Task Coordination
 
-## Getting Started
-
-### Prerequisites
-- STM32CubeIDE or any other compatible IDE for STM32 development.
-- FreeRTOS configured on the STM32 microcontroller.
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/led-control-rtos.git
+The program uses RTOS to handle task execution, enabling precise timing and non-overlapping LED control:
+- **Non-Interference**: The Normal and Idle priorities prevent GPIO conflicts, allowing each task to control its LEDs independently.
+- **Timing and Synchronization**: Each task’s delay aligns with the other’s active time, ensuring consistent and predictable LED patterns without overlapping resource usage.
