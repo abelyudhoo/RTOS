@@ -1,6 +1,6 @@
-# Embedded RTOS Project
+# RTOS STM32 Task3
 
-This project leverages a Real-Time Operating System (RTOS) to manage and synchronize multiple tasks on an embedded platform. The primary functions include reading and processing analog sensor data, controlling an LED based on button input, and communicating status information over UART.
+This project utilizes a Real-Time Operating System (RTOS) to manage and synchronize multiple tasks on an embedded platform. The primary functions include reading and processing analog sensor data, controlling an LED based on button input, and communicating status information over UART.
 
 ## Table of Contents
 
