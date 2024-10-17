@@ -1,4 +1,4 @@
-# RTOS STM32 Task2
+# RTOS STM32 Task3
 
 This project utilizes an RTOS (Real-Time Operating System) to manage multiple tasks running concurrently on an embedded system. The main functionality includes reading sensor data, controlling an LED based on button input, and communicating system status over UART.
 
