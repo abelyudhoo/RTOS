@@ -6,7 +6,7 @@ This project demonstrates multi-tasking LED control on an STM32 microcontroller,
 ## Demontration Video
 
 
-https://github.com/user-attachments/assets/e4d8d5e4-bd56-40b2-b300-1f37a0e9c5dc
+https://github.com/user-attachments/assets/f883b951-13f4-4919-9972-5ad886ac6744
 
 
 ## Program Overview
