@@ -3,6 +3,12 @@
 
 This project demonstrates multi-tasking LED control on an STM32 microcontroller, utilizing FreeRTOS for task scheduling. The program includes two independent tasks, each responsible for controlling different LEDs with specific timing and frequency requirements.
 
+## Demontration Video
+
+
+https://github.com/user-attachments/assets/e4d8d5e4-bd56-40b2-b300-1f37a0e9c5dc
+
+
 ## Program Overview
 
 The program is designed with two main tasks:
