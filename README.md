@@ -1,4 +1,4 @@
-# RTOS STM32 Task3 
+# RTOS STM32 Task4
 # LED Control Program with RTOS
 
 This project demonstrates multi-tasking LED control on an STM32 microcontroller, utilizing FreeRTOS for task scheduling. The program includes two independent tasks, each responsible for controlling different LEDs with specific timing and frequency requirements.
